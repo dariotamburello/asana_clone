@@ -1,0 +1,64 @@
+<section
+  class="flex flex-col lg:flex-row lg:items-center md:gap-10
+  px-6 md:px-20 py-10 md:py-20 mb-24 overflow-hidden"
+>
+  <div class="md:max-w-[400px] lg:max-w-[300px]">
+    <h2 class="text-xl md:text-3xl">
+      El 85 % de las empresas Fortune 100 prefieren Asana¹
+    </h2>
+  </div>
+  <div class="w-[750px] py-5 overflow-hidden md:w-fit">
+    <div
+      class="flex flex-row gap-10 animate-scroll whitespace-nowrap md:animate-none"
+    >
+      <picture>
+        <img src="/images/companies/amazon.webp" alt="Amazon logo" class="" />
+      </picture>
+      <picture>
+        <img src="/images/companies/accenture.webp" alt="Accenture logo" />
+      </picture>
+      <picture>
+        <img src="/images/companies/JJ.webp" alt="Johnson and Johnson logo" />
+      </picture>
+      <picture>
+        <img src="/images/companies/dell.webp" alt="Dell logo" />
+      </picture>
+      <picture>
+        <img src="/images/companies/merck.webp" alt="Merck logo" />
+      </picture>
+      <picture>
+        <img
+          src="/images/companies/amazon.webp"
+          alt="Amazon logo"
+          class="md:hidden"
+        />
+      </picture>
+      <picture>
+        <img
+          src="/images/companies/amazon.webp"
+          alt="Amazon logo"
+          class="md:hidden"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
+</style>

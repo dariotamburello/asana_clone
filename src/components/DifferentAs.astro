@@ -1,0 +1,30 @@
+---
+import TitleH1 from "./textBlocks/TitleH1.astro";
+import DifferentAsCard from "./DifferentAsCard.astro";
+
+const DIFFERENCES = [
+  {
+    id: "clarity",
+    title: "Más claridad y responsabilidad",
+    description:
+      "Conecta los objetivos estratégicos con los equipos que ayudan a alcanzarlos. Observa el progreso en tiempo real, actualiza a las partes interesadas y mantén a la empresa en el camino correcto.",
+    buttonText: "Más información sobre los objetivos",
+    img: "images/home24-clarity.webp",
+  },
+  {
+    id: "iaImpact",
+    title: "Mayor impacto con la IA",
+    description:
+      "La IA se unió al equipo para ayudar a todas las organizaciones a trabajar de manera más inteligente. Mejora la claridad, los resultados y el crecimiento con IA de Asana, con tecnología de Work Graph®.",
+    buttonText: "Te presentamos IA de Asana",
+    img: "images/home24-ia.webp",
+  },
+];
+---
+
+<section class="md:px-10">
+  <div class="max-w-[800px]">
+    <TitleH1>Qué diferencia a Asana del resto</TitleH1>
+  </div>
+  {DIFFERENCES.map((different) => <DifferentAsCard {...different} />)}
+</section>

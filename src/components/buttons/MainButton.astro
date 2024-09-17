@@ -1,0 +1,12 @@
+---
+const { id } = Astro.props;
+---
+
+<button
+  id={id}
+  class=`text-[15px] md:text-xl rounded-[100px] w-auto text-center px-4 py-3 md:px-8 md:py-4 border-[1px]
+  hover:cursor-pointer transition ${id==='allCompany' ? 'buttonActive' : 'buttonRegular' }
+  ${Astro.props.class}`
+>
+  <slot />
+</button>

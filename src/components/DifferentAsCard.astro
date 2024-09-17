@@ -1,0 +1,28 @@
+---
+import SubtitleH2 from "./textBlocks/SubtitleH2.astro";
+import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  img: string;
+}
+
+const { id, title, description, buttonText, img } = Astro.props;
+---
+
+<hr class="mx-10 mb-14 h-[1px] bg-[#e7e7e7]" />
+<div class="grid grid-cols-12 md:px-10 gap-4 mb-48">
+  <div class="flex flex-col col-span-6 pr-20">
+    <SubtitleH2>{title}</SubtitleH2>
+    <p class="text-base md:text-xl font-light my-8">{description}</p>
+    <div>
+      <MainButtonAnchor class="border-2">{buttonText}</MainButtonAnchor>
+    </div>
+  </div>
+  <picture class="col-span-6">
+    <img src={img} alt=`Image for ${title}` />
+  </picture>
+</div>

@@ -1,0 +1,46 @@
+---
+import NavLogo from "./icons/NavLogo.astro";
+import ChevronIconDown from "./icons/ChevronIconDown.astro";
+import LanguageIcon from "./icons/Language.astro";
+import ContactIcon from "./icons/Contact.astro";
+import LoginIcon from "./icons/Login.astro";
+import StartButton from "./buttons/StartButton.astro";
+---
+
+<header>
+  <nav
+    class="flex justify-between items-center w-full bg-white fixed px-20 py-3 text-sm font-medium"
+  >
+    <div class="flex gap-10">
+      <a href="#"><NavLogo textColor="#690031" /></a>
+      <ul class="hidden lg:flex gap-6 text-[#727272]">
+        <a class="flex items-center hover:text-[#0d0e10] transition" href="#"
+          >Funciones
+          <span class="pl-1"><ChevronIconDown /></span></a
+        >
+        <a class="flex items-center hover:text-[#0d0e10] transition" href="#"
+          >Soluciones
+          <span class="pl-1"><ChevronIconDown /></span></a
+        >
+        <a class="flex items-center hover:text-[#0d0e10] transition" href="#"
+          >Enterprise
+          <span class="pl-1"><ChevronIconDown /></span></a
+        >
+        <a class="hover:text-[#0d0e10] transition" href="#">Enterprise</a>
+        <a class="hover:text-[#0d0e10] transition" href="#">Precios</a>
+      </ul>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="pr-6 border-r-[1px] border-gray-300">
+        <LanguageIcon
+          class="size-6 text-zinc-500 hover:cursor-pointer hover:text-zinc-800"
+        />
+      </div>
+      <div class="flex gap-5">
+        <a href="#"><ContactIcon /></a>
+        <a href="#"><LoginIcon /></a>
+      </div>
+      <StartButton>Comenzar</StartButton>
+    </div>
+  </nav>
+</header>

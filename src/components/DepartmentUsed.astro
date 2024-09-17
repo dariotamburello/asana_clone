@@ -1,0 +1,111 @@
+---
+import TitleH1 from "./textBlocks/TitleH1.astro";
+import MainButton from "./buttons/MainButton.astro";
+import DepartmentCard from "./DepartmentCard.astro";
+
+const DEPARTMENTS = [
+  {
+    id: "allCompany",
+    img: "images/departaments/company.webp",
+    title: "Toda la empresa",
+    subtitle: "Transforma los objetivos en operativos",
+    itemsText: [
+      "Vincula el trabajo con los objetivos de la empresa",
+      "Automatiza los flujos de trabajo de diferentes departamentos",
+      "Genera informes sobre el progreso y aborda los cuellos de botella",
+    ],
+    buttonText: "Mira cómo funciona",
+  },
+  {
+    id: "marketing",
+    img: "images/departaments/marketing.webp",
+    title: "Marketing",
+    subtitle: "Cumple con los objetivos de tus campañas",
+    itemsText: [
+      "Simplifica la gestión de campañas",
+      "Mejora la producción creativa",
+      "Gestiona los eventos y los calendarios editoriales",
+    ],
+    buttonText: "Para los equipos de marketing",
+  },
+  {
+    id: "operations",
+    img: "images/departaments/operations.webp",
+    title: "Operaciones",
+    subtitle: "Aumenta la eficiencia operativa",
+    itemsText: [
+      "Da seguimiento al trabajo y consulta el progreso en tiempo real",
+      "Estandariza y automatiza los procesos",
+      "Ayuda a los equipos a alcanzar los objetivos de ingresos",
+    ],
+    buttonText: "Para los equipos de operaciones",
+  },
+  {
+    id: "it",
+    img: "images/departaments/IT.webp",
+    title: "TI",
+    subtitle: "Prioriza y agiliza las solicitudes de TI",
+    itemsText: [
+      "Asigna recursos de manera más efectiva",
+      "Automatiza y adapta tus flujos de trabajo",
+      "Incorpora y desvincula a los empleados",
+    ],
+    buttonText: "Para los equipos de TI",
+  },
+  {
+    id: "product",
+    img: "images/departaments/product.webp",
+    title: "Producto",
+    subtitle: "Lanza mejores productos y más rápido",
+    itemsText: [
+      "Mantén el desarrollo del producto bajo control",
+      "Centraliza la información del lanzamiento",
+      "Vincula tu hoja de ruta del producto a tu estrategia",
+    ],
+    buttonText: "Para los equipos de productos",
+  },
+];
+---
+
+<section class="md:px-10">
+  <div class="max-w-[800px]">
+    <TitleH1>Descubre cómo diferentes departamentos usan Asana</TitleH1>
+  </div>
+  <div class="border border-black/10 md:px-10 pt-10 rounded-3xl mb-32">
+    <div class="overflow-x-auto [scrollbar-width:none]">
+      <nav
+        id="departmentsBtns"
+        class="flex flex-row gap-2 px-6 md:px-0 mb-10 w-[900px]"
+      >
+        {
+          DEPARTMENTS.map((department) => (
+            <MainButton id={department.id}>{department.title}</MainButton>
+          ))
+        }
+      </nav>
+    </div>
+    {DEPARTMENTS.map((department) => <DepartmentCard {...department} />)}
+  </div>
+</section>
+
+<script>
+  const $$buttons = document.querySelectorAll("#departmentsBtns > button");
+  const $$cards = document.querySelectorAll(".companyCard");
+  $$buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      $$buttons.forEach((btn) => {
+        btn.classList.remove("buttonActive");
+        btn.classList.add("buttonRegular");
+      });
+      const element = e.target as HTMLButtonElement;
+      const id = element?.id;
+      element.classList.remove("buttonRegular");
+      element.classList.add("buttonActive");
+      $$cards.forEach((card) => {
+        card.classList.add("hidden", "lg:hidden");
+      });
+      const cardActive = document.getElementById(`card${id}`);
+      cardActive?.classList.remove("hidden", "lg:hidden");
+    });
+  });
+</script>
