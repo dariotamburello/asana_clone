@@ -1,0 +1,52 @@
+---
+const { SVGList } = Astro.props;
+---
+
+<div class="w-full flex items-center overflow-hidden">
+  <div class=`animation ${Astro.props.class} flex gap-3`>
+    {
+      SVGList.map((image: string) => (
+        <div class="marquee-tag border-[1px] border-black/10 rounded-md">
+          <img
+            class="h-10 md:size-auto mx-20 my-5 md:mx-40"
+            src={`/images/integrations/${image}.svg`}
+            alt={image}
+          />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .animation {
+    animation: marquee 15s linear infinite running;
+  }
+  .animation-reverse {
+    animation: marquee-reverse 15s linear infinite running;
+  }
+
+  .marquee-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translate(0%);
+    }
+  }
+</style>

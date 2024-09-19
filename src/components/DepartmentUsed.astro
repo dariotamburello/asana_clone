@@ -67,11 +67,13 @@ const DEPARTMENTS = [
 ];
 ---
 
-<section class="md:px-10">
+<section class="md:px-10 md:mb-32">
   <div class="max-w-[800px]">
-    <TitleH1>Descubre cómo diferentes departamentos usan Asana</TitleH1>
+    <TitleH1 class="ml-6 md:ml-10 mb-20"
+      >Descubre cómo diferentes departamentos usan Asana</TitleH1
+    >
   </div>
-  <div class="border border-black/10 md:px-10 pt-10 rounded-3xl mb-32">
+  <div class="md:border border-black/10 md:px-10 pt-10 rounded-3xl">
     <div class="overflow-x-auto [scrollbar-width:none]">
       <nav
         id="departmentsBtns"
@@ -86,6 +88,7 @@ const DEPARTMENTS = [
     </div>
     {DEPARTMENTS.map((department) => <DepartmentCard {...department} />)}
   </div>
+  <hr class="my-14 h-2 md:hidden" />
 </section>
 
 <script>

@@ -1,0 +1,21 @@
+---
+import TitleH1 from "./textBlocks/TitleH1.astro";
+import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
+import CompaniesTrustQuotes from "./CompaniesTrustQuotes.astro";
+---
+
+<section class="px-6 mb-16 md:px-10 md:mb-28">
+  <div class="grid grid-cols-12 mb-5">
+    <div class="col-span-12 md:col-span-10 lg:col-span-8">
+      <TitleH1 class="mb-5"
+        >Las principales empresas del mundo confían en Asana
+      </TitleH1>
+      <div class="flex">
+        <MainButtonAnchor class="border-[1px] border-black/40"
+          >Explora todos los estudios de casos</MainButtonAnchor
+        >
+      </div>
+    </div>
+  </div>
+  <CompaniesTrustQuotes />
+</section>

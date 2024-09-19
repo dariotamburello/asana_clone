@@ -1,0 +1,28 @@
+---
+import Carrousele from "./Carrousele.astro";
+const INTEGRATIONSSVG1 = [
+  "AdobeCC",
+  "Figma",
+  "GoogleDrive",
+  "Twilio",
+  "Microsoft",
+  "MicrosoftOutlook",
+  "MicrosoftTeams",
+  "Nightfall",
+];
+const INTEGRATIONSSVG2 = [
+  "Okta",
+  "Pagerduty",
+  "Salesforce",
+  "ServiceNow",
+  "Slack",
+  "Tableau",
+  "Vimeo",
+  "Zendesk",
+];
+---
+
+<div class="flex flex-col gap-5 mb-14 md:mb-44">
+  <Carrousele SVGList={INTEGRATIONSSVG1} />
+  <Carrousele SVGList={INTEGRATIONSSVG2} class="animation-reverse" />
+</div>

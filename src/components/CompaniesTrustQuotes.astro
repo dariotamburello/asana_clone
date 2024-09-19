@@ -1,0 +1,53 @@
+---
+import QuoteSymbol from "./icons/QuoteSymbol.astro";
+import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
+---
+
+<div
+  class="flex flex-col lg:grid grid-cols-12 border-[1px] border-black/10 rounded-2xl mt-16"
+>
+  <div class="flex flex-col justify-between col-span-4 mx-8 my-10">
+    <picture class="flex justify-center lg:justify-start">
+      <img src="images/companies/Danone_quote.svg" alt="Danone" />
+    </picture>
+    <div class="hidden lg:flex flex-col">
+      <hr class="mb-10" />
+      <div class="flex flex-col mb-5">
+        <p class="uppercase text-[11px] font-medium text-[#6e6e6e]">
+          Tamaño de la empresa
+        </p>
+        <h4 class="text-xl font-light text-[#0d0d0d]">Enterprise</h4>
+      </div>
+      <div class="flex flex-col mb-5">
+        <p class="uppercase text-[11px] font-medium text-[#6e6e6e]">Sector</p>
+        <h4 class="text-xl font-light text-[#0d0d0d]">Alimentos y hotelería</h4>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col col-span-8 bg-sky-200/80 p-5 md:p-14">
+    <div class="flex flex-col md:flex-row text-[#222875]">
+      <div class="py-1 md:px-3">
+        <QuoteSymbol class="w-4 md:w-6" />
+      </div>
+      <div>
+        <h1
+          class="text-xl md:text-4xl font-light mb-10 [line-height:130%] text-pretty"
+        >
+          Asana hace que todo se pueda compartir, lo que nos ahorra tiempo en la
+          ejecución de programas porque es mucho más fácil replicar y aprender
+          de lo que otros ya hicieron.
+        </h1>
+        <h2 class="font-medium">Simon Levinson</h2>
+        <h2 class="font-light">
+          Jefe de Innovación de Procesos de Fabricación Digital Global, Danone
+        </h2>
+        <div class="hidden md:flex justify-start lg:justify-end w-full mt-20">
+          <MainButtonAnchor class="border-[1px] border-[#222875] text-[#222875]"
+            >Leer caso de uso</MainButtonAnchor
+          >
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
+  </div>
+</div>
