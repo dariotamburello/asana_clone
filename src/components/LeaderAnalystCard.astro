@@ -1,0 +1,36 @@
+---
+import ArrowRight from "./icons/ArrowRight.astro";
+
+interface Props {
+  id: string;
+  img: string;
+  text: string;
+  url?: string;
+}
+const { id, img, text, url } = Astro.props;
+---
+
+<div class="flex flex-col-reverse md:flex-col col-span-3">
+  <picture class="mt-5">
+    <img src={img} alt=`Image of ${id}` />
+  </picture>
+  <div>
+    <h1
+      class="text-[#0d0d0d] text-sm md:text-xl font-light tracking-wide text-pretty my-6"
+    >
+      {text}
+    </h1>
+    {
+      url && (
+        <a class="flex flex-row items-center" href={url}>
+          <p class="text-[#0d0d0d] text-sm font-medium md:text-xl md:font-normal">
+            Más información
+          </p>
+          <div class=" bg-black text-white p-[3px] md:p-2 rounded-full ml-2">
+            <ArrowRight class="size-[7px] md:size-3" />
+          </div>
+        </a>
+      )
+    }
+  </div>
+</div>

@@ -1,0 +1,123 @@
+---
+import TitleH1 from "./textBlocks/TitleH1.astro";
+import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
+---
+
+<section
+  id="borderSection"
+  class="px-6 py-10 md:py-20 mx-0 md:mx-4 md:px-10 bg-coral-1000 md:rounded-t-2xl"
+>
+  <div id="scrollSection">
+    <div class="grid grid-cols-12">
+      <TitleH1
+        class="col-span-12 md:col-span-6 lg:col-span-5 text-coral-0 text-pretty"
+        >La única plataforma que puede respaldar a tu empresa y crecer con ella</TitleH1
+      >
+    </div>
+    <div class="flex pt-2 md:pt-5">
+      <MainButtonAnchor class="bg-coral-0 text-coral-1000 hover:bg-coral-100"
+        >Comenzar</MainButtonAnchor
+      >
+    </div>
+  </div>
+  <hr class="bg-coral-800/70 border-none h-[1px] mt-10 md:mt-20" />
+  <div
+    id="footer-1"
+    class="text-coral-0 text-xs md:text-[13px] [line-height:18px] md:[line-height:19.5px]
+    font-light mt-8 tracking-wide"
+  >
+    <p class="mb-2 md:mb-3">
+      1. A diciembre de 2023, incluye usuarios gratuitos y de pago.
+    </p>
+    <p class="mb-2 md:mb-3">
+      2. Consulte el <a
+        class="underline hover:text-coral-300 transition"
+        href="#"
+        >Magic Cuadrant™ 2023 de Gartner® para conocer la gestión colaborativa
+        del trabajo (CWM)</a
+      >. GARTNER es una marca comercial y de servicio registrada de Gartner,
+      Inc. y/o sus empresas afiliadas en EE. UU. y a nivel internacional. MAGIC
+      QUADRANT y PEER INSIGHTS son marcas comerciales registradas y la insignia
+      GARTNER PEER INSIGHTS CUSTOMERS’ CHOICE es una marca comercial y de
+      servicio de Gartner, Inc. y/o sus empresas afiliadas y se utiliza en este
+      documento con autorización. Todos los derechos reservados.
+    </p>
+    <p class="mb-2 md:mb-3">
+      3. Consulte <a class="underline hover:text-coral-300 transition" href="#"
+        >The Forrester Wave™: Herramientas de gestión colaborativa del trabajo,
+        informe del cuarto trimestre de 2022</a
+      >. The Forrester Wave: Herramientas de gestión colaborativa del trabajo,
+      cuarto trimestre de 2022. Forrester Research, Inc. tiene los derechos de
+      autor sobre The Forrester Wave™️. Forrester y The Forrester Wave™️ son
+      marcas comerciales de Forrester Research, Inc. The Forrester Wave™️ es una
+      representación gráfica de la opinión de Forrester sobre un mercado y se
+      traza utilizando una hoja de cálculo detallada con puntuaciones,
+      ponderaciones y comentarios expuestos. Forrester no promueve a ningún
+      proveedor, producto o servicio al que se haga referencia en The Forrester
+      Wave. La información se basa en los mejores recursos disponibles. Las
+      opiniones reflejan un juicio en un momento dado y están sujetas a cambios.
+    </p>
+    <p class="mb-2 md:mb-3">
+      4. IDC MarketScape: Evaluación de proveedores de herramientas de gestión
+      colaborativa del trabajo a nivel mundial 2023-2024. Uniendo equipos, datos
+      e inteligencia artificial para un trabajo flexible, Doc. #US49434923,
+      diciembre de 2023
+    </p>
+  </div>
+  <hr class="bg-coral-800/70 border-none h-[1px] mt-10 md:mt-20" />
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollSection = document.getElementById("scrollSection");
+    const borderSection = document.getElementById("borderSection");
+    if (!scrollSection || !borderSection) return false;
+
+    const initialMargin = parseFloat(
+      getComputedStyle(borderSection).marginLeft
+    );
+    const initialPadding = parseFloat(
+      getComputedStyle(borderSection).paddingLeft
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            window.addEventListener("scroll", handleScrollProgress);
+          } else {
+            window.removeEventListener("scroll", handleScrollProgress);
+          }
+        });
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    observer.observe(scrollSection);
+
+    function handleScrollProgress() {
+      if (!scrollSection || !borderSection) return false;
+
+      const windowHeight = window.innerHeight;
+
+      const totalScrollHeight = scrollSection.offsetHeight + windowHeight;
+      const scrolledDistance =
+        window.scrollY + windowHeight - scrollSection.offsetTop;
+
+      const scrollProgress = Math.min(
+        Math.max(scrolledDistance / totalScrollHeight, 0),
+        1
+      );
+
+      const marginValue = initialMargin * (1 - scrollProgress);
+      const paddingValue = initialPadding + (initialMargin - marginValue);
+
+      borderSection.style.marginLeft = `${marginValue}px`;
+      borderSection.style.marginRight = `${marginValue}px`;
+      borderSection.style.paddingLeft = `${paddingValue}px`;
+      borderSection.style.paddingRight = `${paddingValue}px`;
+    }
+  });
+</script>

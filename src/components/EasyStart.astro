@@ -1,0 +1,61 @@
+---
+import TitleH1 from "./textBlocks/TitleH1.astro";
+import Paragraph from "./textBlocks/Paragraph.astro";
+import ArrowRight from "./icons/ArrowRight.astro";
+
+const TASKS = [
+  {
+    id: "mira-asana-accion",
+    title: "Mira Asana en acción",
+    subtitle: "Ver demostración",
+    url: "#",
+  },
+  {
+    id: "explorar-recursos",
+    title: "Explorar los recursos",
+    subtitle: "Explora el Centro de recursos",
+    url: "#",
+  },
+  {
+    id: "comienza-plantillas",
+    title: "Comienza con una plantilla",
+    subtitle: "Ver plantillas",
+    url: "#",
+  },
+];
+---
+
+<section
+  class="md:grid grid-cols-12 px-6 py-12 mb-16 md:px-7 md:py-28 md:mx-5 md:mb-28 bg-[#fafafa]"
+>
+  <div class="flex flex-col col-span-5 lg:col-span-6 pr-20">
+    <TitleH1>Comienza fácilmente</TitleH1>
+    <Paragraph
+      >Visite la plataforma, lea algunos análisis profundos o inicie su viaje de
+      gestión laboral con la plantilla adecuada.</Paragraph
+    >
+  </div>
+  <div class="flex flex-col col-span-7 lg:col-span-6 gap-4 md:px-6 py-3">
+    {
+      TASKS.map((task) => (
+        <a
+          href={task.url}
+          class="flex flex-row justify-between items-start px-3 md:px-6 py-4 md:py-8 rounded-xl
+           bg-white hover:bg-[#f3f3f3] transition"
+        >
+          <div class="flex flex-col">
+            <h2 class="text-xl md:text-3xl font-normal md:mb-5">
+              {task.title}
+            </h2>
+            <h3 class="text-[15px] md:text-xl font-light text-[#6e6e6e]">
+              {task.subtitle}
+            </h3>
+          </div>
+          <div class="flex bg-black text-white rounded-full p-2 md:p-3">
+            <ArrowRight class="size-5 md:size-8" />
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

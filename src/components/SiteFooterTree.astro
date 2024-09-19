@@ -1,0 +1,30 @@
+---
+import IconDots from "./icons/IconDots.astro";
+import { TREE } from "../data/site-tree.js";
+---
+
+<section class="px-10 md:px-20 lg:px-6 bg-coral-1000">
+  <div class="grid grid-cols-12">
+    <div class="col-span-12 lg:col-span-1 mb-14">
+      <IconDots class="text-[#ff584a]" />
+    </div>
+    {
+      TREE.map((branch) => (
+        <ul class="col-span-6 md:col-span-4 lg:col-span-2 ml-5 mb-8">
+          <li class="text-sm font-medium text-coral-0 mb-7">{branch.title}</li>
+          <li class="flex flex-col pr-5 mb-4">
+            {branch.links.map((link) => (
+              <a
+                class="text-coral-200 text-xs lg:text-base font-normal hover:text-coral-100
+                mb-4 hover:underline transition"
+                href={link.url}
+              >
+                {link.subtitle}
+              </a>
+            ))}
+          </li>
+        </ul>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,94 @@
+---
+import LanguageIcon from "./icons/Language.astro";
+import Twitter from "./icons/social/Twitter.astro";
+import Linkedin from "./icons/social/Linkedin.astro";
+import Instagram from "./icons/social/Instagram.astro";
+import Facebook from "./icons/social/Facebook.astro";
+import Youtube from "./icons/social/Youtube.astro";
+import GooglePlay from "./icons/social/GooglePlay.astro";
+import AppStore from "./icons/social/AppStore.astro";
+---
+
+<footer
+  class="flex flex-col justify-around md:flex-row bg-coral-900/90 py-10 mb-40"
+>
+  <div>
+    <p class="text-sm font-normal text-white">© 2024 Asana, Inc.</p>
+  </div>
+  <div class="flex flex-row text-coral-200 hover:text-coral-0 transition">
+    <LanguageIcon class="size-6 hover:cursor-pointer mr-2" /><a
+      class="hover:underline"
+      href="https://asana.com/es#i18n">Español</a
+    >
+  </div>
+
+  <p class="text-coral-200">
+    <a
+      class="hover:text-white hover:underline transition"
+      href="https://asana.com/es/terms">Términos</a
+    > &
+    <a
+      class="hover:text-white hover:underline transition"
+      href="https://asana.com/es/terms/privacy-statement">Privacidad</a
+    >
+  </p>
+
+  <div class="flex flex-row items-start text-white gap-1">
+    <a
+      href="https://twitter.com/intent/follow?screen_name=asana"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="bg-black p-2 rounded-full hover:bg-white hover:text-black transition"
+    >
+      <Twitter class="size-5" />
+    </a>
+    <a
+      href="https://www.linkedin.com/company/asana"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="bg-black p-2 rounded-full hover:bg-white hover:text-black transition"
+    >
+      <Linkedin />
+    </a>
+    <a
+      href="https://www.instagram.com/asana/"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="bg-black p-2 rounded-full hover:bg-white hover:text-black transition"
+    >
+      <Instagram />
+    </a>
+    <a
+      href="https://www.facebook.com/asana"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="bg-black p-2 rounded-full hover:bg-white hover:text-black transition"
+    >
+      <Facebook />
+    </a>
+    <a
+      href="https://www.youtube.com/channel/UC2BoogM0AqwOJyoSp1S4ClQ"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="bg-black p-2 rounded-full hover:bg-white hover:text-black transition"
+    >
+      <Youtube />
+    </a>
+  </div>
+  <div class="flex flex-row gap-2">
+    <a
+      href="https://itunes.apple.com/us/app/asana-mobile/id489969512?mt=8"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <AppStore />
+    </a>
+    <a
+      href="https://play.google.com/store/apps/details?id=com.asana.app"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <GooglePlay />
+    </a>
+  </div>
+</footer>

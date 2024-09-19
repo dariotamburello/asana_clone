@@ -1,0 +1,35 @@
+---
+import TitleH1 from "./textBlocks/TitleH1.astro";
+import LeaderAnalystCard from "./LeaderAnalystCard.astro";
+
+const CARDS = [
+  {
+    id: "gartner",
+    img: "images/Gartner.webp",
+    text: "Líder en el Magic Quadrant de Gartner para la gestión colaborativa del trabajo²",
+    url: "#",
+  },
+  {
+    id: "forrester",
+    img: "images/Forrester-Wave.webp",
+    text: "Líder en el informe The Forrester Wave™: Herramientas de gestión colaborativa del trabajo³",
+    url: "#",
+  },
+  {
+    id: "idc",
+    img: "images/IDC.webp",
+    text: "Líder en IDC MarketScape: Evaluación global de proveedores de herramientas de gestión colaborativa del trabajo⁴",
+  },
+];
+---
+
+<section class="px-6 mb-16 md:px-10 md:mb-28">
+  <div class="grid grid-cols-12">
+    <TitleH1 class="col-span-12 md:col-span-8"
+      >Reconocida como líder por las principales empresas de analistas
+    </TitleH1>
+  </div>
+  <div class="flex flex-col md:grid grid-cols-9 gap-6 mt-7 md:mt-14">
+    {CARDS.map((card) => <LeaderAnalystCard {...card} />)}
+  </div>
+</section>
