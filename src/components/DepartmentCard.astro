@@ -1,6 +1,6 @@
 ---
 import SubtitleH2 from "./textBlocks/SubtitleH2.astro";
-import MainButton from "./buttons/MainButton.astro";
+import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
 
 interface Props {
   id: string;
@@ -8,9 +8,10 @@ interface Props {
   subtitle: string;
   itemsText: Array<string>;
   buttonText: string;
+  buttonUrl: string;
 }
 
-const { id, img, subtitle, itemsText, buttonText } = Astro.props;
+const { id, img, subtitle, itemsText, buttonText, buttonUrl } = Astro.props;
 ---
 
 <div
@@ -31,8 +32,10 @@ const { id, img, subtitle, itemsText, buttonText } = Astro.props;
         ))
       }
     </ul>
-    <div>
-      <MainButton class="border-2">{buttonText}</MainButton>
+    <div class="flex">
+      <MainButtonAnchor href={buttonUrl} class="border-2 hover:bg-[#f3f3f3]"
+        >{buttonText}</MainButtonAnchor
+      >
     </div>
   </div>
 </div>

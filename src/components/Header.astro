@@ -5,15 +5,17 @@ import LanguageIcon from "./icons/Language.astro";
 import ContactIcon from "./icons/Contact.astro";
 import LoginIcon from "./icons/Login.astro";
 import StartButton from "./buttons/StartButton.astro";
+import MenuMobile from "./icons/MenuMobile.astro";
 ---
 
 <header>
   <nav
-    class="flex justify-between items-center w-full bg-white z-10 fixed px-20 py-3 text-sm font-medium"
+    class="flex justify-between items-center w-full bg-white z-10 fixed
+    px-5 lg:px-20 py-3 text-sm font-medium"
   >
-    <div class="flex gap-10">
-      <a href="#"><NavLogo textColor="#690031" /></a>
-      <ul class="hidden lg:flex gap-6 text-[#727272]">
+    <a href="#"><NavLogo textColor="#690031" /></a>
+    <div class="hidden lg:flex gap-10">
+      <ul class="flex gap-6 text-[#727272]">
         <a class="flex items-center hover:text-[#0d0e10] transition" href="#"
           >Funciones
           <span class="pl-1"><ChevronIconDown /></span></a
@@ -23,24 +25,48 @@ import StartButton from "./buttons/StartButton.astro";
           <span class="pl-1"><ChevronIconDown /></span></a
         >
         <a class="flex items-center hover:text-[#0d0e10] transition" href="#"
-          >Enterprise
+          >Recursos
           <span class="pl-1"><ChevronIconDown /></span></a
         >
-        <a class="hover:text-[#0d0e10] transition" href="#">Enterprise</a>
-        <a class="hover:text-[#0d0e10] transition" href="#">Precios</a>
+        <a
+          class="hover:text-[#0d0e10] transition"
+          href="https://asana.com/es/enterprise">Enterprise</a
+        >
+        <a
+          class="hover:text-[#0d0e10] transition"
+          href="https://asana.com/es/pricing">Precios</a
+        >
       </ul>
     </div>
-    <div class="flex items-center gap-6">
+    <div class="hidden md:flex items-center gap-6">
       <div class="pr-6 border-r-[1px] border-gray-300">
         <LanguageIcon
           class="size-6 text-zinc-500 hover:cursor-pointer hover:text-zinc-800"
         />
       </div>
       <div class="flex gap-5">
-        <a href="#"><ContactIcon /></a>
-        <a href="#"><LoginIcon /></a>
+        <a
+          class="lg:hidden text-[#727272] hover:text-zinc-800"
+          href="https://asana.com/sales">Contactar a ventas</a
+        >
+        <a class="hidden lg:block" href="https://asana.com/sales"
+          ><ContactIcon /></a
+        >
+        <a
+          class="lg:hidden text-[#727272] hover:text-zinc-800"
+          href="https://app.asana.com/-/login?_gl=1*1csbwod*_gcl_au*MTMwOTY0OTQ5LjE3MjYzMTE0ODk.*FPAU*MTMwOTY0OTQ5LjE3MjYzMTE0ODk.*_ga*MTM2OTA1MzA2MC4xNzI2MzExNDkw*_ga_J1KDXMCQTH*MTcyNjgyODIwOS4yOC4xLjE3MjY4MzAwOTQuMjYuMC4xMTE0MTgxODI3*_fplc*cCUyQndQMmhEZGslMkJ3JTJCTVk2cEFHWFVpaTBuYnhHNU80SVI2SEcxZmozcGxkNUlucUtLM1RTSiUyRmoyTW00NEFYd1AlMkJleWNZeVNtJTJCMFB0VHIlMkJFVkJoeUpyWGx4MXJJcjlxVkx1OVp6ZiUyQldwZHJLZ0ppVk9KZWJZaUszbEY5OGZPUSUzRCUzRA.."
+          >Iniciar sesion</a
+        >
+        <a
+          class="hidden lg:block"
+          href="https://app.asana.com/-/login?_gl=1*1csbwod*_gcl_au*MTMwOTY0OTQ5LjE3MjYzMTE0ODk.*FPAU*MTMwOTY0OTQ5LjE3MjYzMTE0ODk.*_ga*MTM2OTA1MzA2MC4xNzI2MzExNDkw*_ga_J1KDXMCQTH*MTcyNjgyODIwOS4yOC4xLjE3MjY4MzAwOTQuMjYuMC4xMTE0MTgxODI3*_fplc*cCUyQndQMmhEZGslMkJ3JTJCTVk2cEFHWFVpaTBuYnhHNU80SVI2SEcxZmozcGxkNUlucUtLM1RTSiUyRmoyTW00NEFYd1AlMkJleWNZeVNtJTJCMFB0VHIlMkJFVkJoeUpyWGx4MXJJcjlxVkx1OVp6ZiUyQldwZHJLZ0ppVk9KZWJZaUszbEY5OGZPUSUzRCUzRA.."
+          ><LoginIcon /></a
+        >
       </div>
+    </div>
+    <div class="flex flex-row items-center gap-5">
       <StartButton>Comenzar</StartButton>
+      <MenuMobile class="lg:hidden hover:cursor-pointer" />
     </div>
   </nav>
 </header>

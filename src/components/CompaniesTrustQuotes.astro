@@ -1,12 +1,68 @@
 ---
 import QuoteSymbol from "./icons/QuoteSymbol.astro";
 import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
+
+const QUOTES = [
+  {
+    id: "danone",
+    logo: "images/companies/Danone_quote.svg",
+    bgColor: "bg-sky-200/80",
+    fontColor: "text-[#222875]",
+    companySize: "Empresa",
+    companySector: "Alimentos y hotelería",
+    quote:
+      "Asana hace que todo se pueda compartir, lo que nos ahorra tiempo en la ejecución de programas porque es mucho más fácil replicar y aprender de lo que otros ya hicieron.",
+    quoteName: "Simon Levinson",
+    quotePosition:
+      "Jefe de Innovación de Procesos de Fabricación Digital Global, Danone",
+    url: "https://asana.com/case-study/danone",
+  },
+  {
+    id: "kendo",
+    logo: "images/companies/Kendo_quote.svg",
+    bgColor: "bg-coral-0",
+    fontColor: "text-coral-1000",
+    companySize: "Mediana empresa",
+    companySector: "Ventas minoristas y bienes de consumo (CPG)",
+    quote:
+      "Para alcanzar nuestro ambicioso objetivo de crecimiento, debemos movernos rápido y trabajar con procesos claros. Estoy convencido de que la implementación de procesos, como los que creamos en Asana, nos ayudará a impulsar el éxito.",
+    quoteName: "Romain Ehrhard",
+    quotePosition: "CIO, KENDO",
+    url: "https://asana.com/case-study/kendo",
+  },
+  {
+    id: "spotify",
+    logo: "images/companies/Spotify_quote.svg",
+    bgColor: "bg-[#c9fcdb]",
+    fontColor: "text-[#004232]",
+    companySize: "Empresa",
+    companySector: "Tecnología",
+    quote:
+      "Asana es nuestro centro de control. Tenemos visibilidad para expandir la producción y respaldar un mayor número de campañas publicitarias a fin de alcanzar nuestros objetivos de ingresos.",
+    quoteName: "Eugenia Contreras",
+    quotePosition: "Jefa asociada, Spotify",
+    url: "https://asana.com/case-study/spotify",
+  },
+  {
+    id: "gannett",
+    logo: "images/companies/Gannett_quote.svg",
+    bgColor: "bg-sky-200/80",
+    fontColor: "text-[#222875]",
+    companySize: "Empresa",
+    companySector: "Imágenes y contenido",
+    quote:
+      "Disponer de un ecosistema centralizado que reúne a todos los responsables y partes interesadas ciertamente ha acelerado nuestra comprensión del trabajo que hacemos y la velocidad a la que lo hacemos.",
+    quoteName: "Steven Tai",
+    quotePosition: "Director de Operaciones de Marketing, Gannett",
+    url: "https://asana.com/case-study/gannett",
+  },
+];
 ---
 
-<div
+<article
   class="flex flex-col lg:grid grid-cols-12 border-[1px] border-black/10 rounded-2xl mt-16"
 >
-  <div class="flex flex-col justify-between col-span-4 mx-8 my-10">
+  <aside class="flex flex-col justify-between col-span-4 mx-8 my-10">
     <picture class="flex justify-center lg:justify-start">
       <img src="images/companies/Danone_quote.svg" alt="Danone" />
     </picture>
@@ -23,9 +79,9 @@ import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
         <h4 class="text-xl font-light text-[#0d0d0d]">Alimentos y hotelería</h4>
       </div>
     </div>
-  </div>
-  <div class="flex flex-col col-span-8 bg-sky-200/80 p-5 md:p-14">
-    <div class="flex flex-col md:flex-row text-[#222875]">
+  </aside>
+  <main class="flex flex-col col-span-8 bg-coral-0 p-5 md:p-14">
+    <div class="flex flex-col md:flex-row text-coral-1000">
       <div class="py-1 md:px-3">
         <QuoteSymbol class="w-4 md:w-6" />
       </div>
@@ -49,5 +105,5 @@ import MainButtonAnchor from "./buttons/MainButtonAnchor.astro";
         <div class=""></div>
       </div>
     </div>
-  </div>
-</div>
+  </main>
+</article>
