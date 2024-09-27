@@ -1,6 +1,7 @@
-# "Asana website clone"
+# Asana website clone v1.0
 
-Landpage cloned from [Asana website](https://asana.com/) and coded with 🚀 Astro and ✏️ TailwindCSS
+Landingpage cloned from [Asana website](https://asana.com/) and coded with 🚀 Astro and ✏️ TailwindCSS
+Improvements:
 ```sh
 DomContentLoad 1.50s ➡️ 508ms (same assets)
 ```
